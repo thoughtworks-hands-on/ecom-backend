@@ -64,6 +64,8 @@ public class OrderService {
         orderDTO.setId(order.getId());
         orderDTO.setUserId(order.getUser().getId());
         orderDTO.setLineItems(mapLineItemsToDTO(order));
+        // update orderDTO to include the total price of the order
+        orderDTO.setTotalPrice(order.getTotalPrice());
         return orderDTO;
     }
 
@@ -72,6 +74,8 @@ public class OrderService {
                 .orElseThrow(() -> new NotFoundException("user not found"));
         order.setUser(user);
         order.setLineItems(mapLineItemsToEntity(orderDTO, order));
+        // calculate the total price of the order and set it to the order object
+        order.setTotalPrice(order.getLineItems().stream().mapToDouble(lineItem -> lineItem.getProduct().getPrice() * lineItem.getQuantity()).sum());
     }
 
     // write method to map line items from Order to OrderDto object and return it

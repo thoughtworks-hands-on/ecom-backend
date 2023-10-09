@@ -27,6 +27,10 @@ public class Order {
     @NotNull
     private List<LineItem> lineItems;
 
+    // create a new field to store the total price of the order
+    @NotNull
+    private Double totalPrice;
+
     @CreatedDate
     private OffsetDateTime dateCreated;
 

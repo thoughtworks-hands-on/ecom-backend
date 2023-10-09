@@ -17,4 +17,6 @@ public class OrderDto {
     @NotNull
     private List<LineItemDto> lineItems;
 
+    @NotNull
+    private Double totalPrice;
 }
