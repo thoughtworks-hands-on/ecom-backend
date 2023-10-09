@@ -74,7 +74,7 @@ public class OrderService {
                 .orElseThrow(() -> new NotFoundException("user not found"));
         order.setUser(user);
         order.setLineItems(mapLineItemsToEntity(orderDTO, order));
-        // calculate the total price of the order and set it to the order object
+       // calculate totalprice and set it to order
         order.setTotalPrice(order.getLineItems().stream().mapToDouble(lineItem -> lineItem.getProduct().getPrice() * lineItem.getQuantity()).sum());
     }
 

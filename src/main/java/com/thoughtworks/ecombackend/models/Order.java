@@ -27,7 +27,7 @@ public class Order {
     @NotNull
     private List<LineItem> lineItems;
 
-    // create a new field to store the total price of the order
+    // create a new field to store totalprice
     @NotNull
     private Double totalPrice;
 

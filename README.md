@@ -4,7 +4,7 @@
 Copilot experimentation:
 
 1. Calculate order total price.
-2. Create OrderServiceTest class to test the order service for methods, findAll, CreateMethod etc
+2. Create OrderServiceTest class to test the order service for methods, findAll, Create Method etc
 3. Write an api to find all products that are in stock
 4. Write an api to find all products that are out of stock
 5. Write an api to find all products that are in stock and have a price greater than 100
